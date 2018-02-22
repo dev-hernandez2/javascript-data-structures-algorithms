@@ -121,4 +121,4 @@ setD.add('d');
 console.log(setD.values());
 setD.delete('a');
 console.log(setD.has('a'));
-console.log(setD.add('a'));
+console.log(setD.add('d'));
