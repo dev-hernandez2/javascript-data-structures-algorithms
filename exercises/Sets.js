@@ -1,5 +1,5 @@
 /*
-The Sets (data structure) is like an array except there no duplicate items and their values are not in particular order. 
+The Sets (data structure) is like an array except there no duplicate items and their values are in any particular order. 
 The typical use for Sets is to simply check for a particular item. 
 
 */
@@ -43,10 +43,12 @@ class mySet {
         return false;
     }
 
-    // size method will return the size of the collecton object
+    // size method will return the size of the collecton object (in es6 size is a property no a method set.size)
     size() {
         return this.collection.length;
     }
+
+    //any of this method  below are not include in the Set version of es6 
 
     //union method will return the union of two set
     union(otherSet) {
