@@ -1,0 +1,11 @@
+{
+  "name": "js-data-structure",
+  "version": "1.0.0",
+  "description": "js data structure exercises",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "william hernandez",
+  "license": "ISC"
+}
