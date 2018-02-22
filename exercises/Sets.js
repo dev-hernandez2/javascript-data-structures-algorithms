@@ -55,12 +55,8 @@ class mySet {
         const unionSet = new mySet();
         const firstSet = this.values();
         const secondSet = otherSet.values();
-        firstSet.forEach(e => {
-            unionSet.add(e);
-        });
-        secondSet.forEach(e => {
-            unionSet.add(e);
-        });
+        firstSet.forEach(e => unionSet.add(e));
+        secondSet.forEach(e => unionSet.add(e));
         return unionSet;
     }
 
@@ -68,11 +64,14 @@ class mySet {
     intersection(otherSet) {
         const intersectionSet = new mySet();
         const firstSet = this.values();
-        firstSet.forEach(e => {
-            if (otherSet.has(e)) {
-                intersectionSet.add(e);
-            }
-        });
+        firstSet
+            .filter( e => otherSet.has(e))
+            .forEach(e => intersectionSet.add(e));
+        // firstSet.forEach(e => {
+        //     if (otherSet.has(e)) {
+        //         intersectionSet.add(e);
+        //     }
+        // });
         return intersectionSet;
     }
 
@@ -80,20 +79,21 @@ class mySet {
     difference(otherSet) {
         const differenceSet = new mySet();
         const firstSet = this.values();
-        firstSet.forEach(e => {
-            if (!otherSet.has(e)) {
-                differenceSet.add(e);
-            }
-        });
+        firstSet
+            .filter( e => !otherSet.has(e))
+            .forEach(e => differenceSet.add(e));
+        // firstSet.forEach(e => {
+        //     if (!otherSet.has(e)) {
+        //         differenceSet.add(e);
+        //     }
+        // });
         return differenceSet;
     }
 
     //subset method will test if the set is subset of a different set
     subset(otherSet) {
         const firstSet = this.values();
-        return firstSet.every(value => {
-            return otherSet.has(value);
-        });
+        return firstSet.every(value => otherSet.has(value));
     }
 }
 
