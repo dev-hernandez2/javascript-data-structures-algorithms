@@ -1,5 +1,7 @@
 /* Stacks (Data Structure) */
 
+console.log('====================Stacks======================');
+
 //fuctions:
 //push: For placing data on to the stack
 //pop: For removing the last top of the stack
@@ -74,6 +76,8 @@ class Stack {
     }
 
 }
+
+
 
 const myStack = new Stack();
 
