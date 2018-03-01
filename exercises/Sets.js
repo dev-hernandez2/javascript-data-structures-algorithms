@@ -67,11 +67,7 @@ class mySet {
         firstSet
             .filter( e => otherSet.has(e))
             .forEach(e => intersectionSet.add(e));
-        // firstSet.forEach(e => {
-        //     if (otherSet.has(e)) {
-        //         intersectionSet.add(e);
-        //     }
-        // });
+       
         return intersectionSet;
     }
 
@@ -82,11 +78,7 @@ class mySet {
         firstSet
             .filter( e => !otherSet.has(e))
             .forEach(e => differenceSet.add(e));
-        // firstSet.forEach(e => {
-        //     if (!otherSet.has(e)) {
-        //         differenceSet.add(e);
-        //     }
-        // });
+    
         return differenceSet;
     }
 
