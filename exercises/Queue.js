@@ -12,7 +12,7 @@ class Queue {
         this.collection = [];
     }
 
-    //Helpe print the collection 
+    //Help print the collection 
     print() {
         console.log(this.collection);
     }
