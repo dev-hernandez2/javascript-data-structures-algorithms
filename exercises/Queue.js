@@ -55,3 +55,68 @@ q.print();
 q.dequeue();
 console.log(q.front());
 q.print();
+
+
+console.log('====================PriorityQueues======================');
+
+class PriorityQueue {
+    constructor() {
+        this.collection = [];
+    }
+
+    printCollection() {
+        (console.log(this.collection));
+    }
+
+    enqueue(element) {
+        if (this.isEmpty()) {
+            this.collection.push(element);
+        } else {
+            let added = false;
+            for (let i = 0; i < this.collection.length; i++) {
+                if (element[1] < this.collection[i][1]) {
+                    this.collection.splice(i, 0, element);
+                    added = true;
+                    break;
+                }
+            }
+            if (!added) {
+                this.collection.push(element);
+            }
+        }
+
+    }
+
+    dequeue() {
+        const value = this.collection.shift();
+        return value[0];
+    }
+
+    front() {
+        return this.collection[0];
+    }
+
+    size() {
+        return this.collection.length;
+    }
+
+    isEmpty() {
+        return (this.collection.length === 0);
+    }
+}
+
+
+const pq = new PriorityQueue();
+
+pq.enqueue(['William Hernandez', 2]);
+pq.enqueue(['Celis Hernandez', 1]);
+pq.enqueue(['Sucely Hernandez', 3]);
+pq.enqueue(['Sayris Hernandez', 4]);
+
+pq.printCollection();
+pq.dequeue();
+pq.front();
+
+pq.printCollection();
+pq.enqueue(['Celis Hernandez', 1]);
+pq.printCollection();
